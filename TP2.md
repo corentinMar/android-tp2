@@ -1,3 +1,5 @@
+Version imagée : https://drive.google.com/file/d/1B7P8k0QYwg7PNrVIucEOHe5VYf65aruP/view?usp=sharing
+
 # TP2 Communication et ergonomie
 
 Dans le TP précédent, nous avons appris les bases de la programmation Android avec Kotlin en créant des interfaces simples. Ici, nous allons aller un peu plus loin en améliorant la structure de notre application.
