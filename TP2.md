@@ -7,6 +7,7 @@ Dans le TP précédent, nous avons appris les bases de la programmation Android 
 Pour ce faire créons un nouveau projet. Pensez à définir les dépendances vers ConstraintLayout et MaterialDesign mais aussi Dagger qui va nous servir pour l'injection de dépendance.
 
 ```gradle
+apply plugin: 'android-kapt'
 dependencies {
     ...
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
@@ -171,7 +172,7 @@ package com.example.tp2.model
 data class User(var lastname: String = "", var firstname: String = "")
 ```
 
-Pour pouvoir lier cet objet avec notre formulaire directement dans le layout, il nous faut déclarer l'objet dans le fichier ;
+Pour pouvoir lier cet objet avec notre formulaire directement dans le layout, il nous faut déclarer l'objet dans votre layout :
 
 ```xml
 <data>
