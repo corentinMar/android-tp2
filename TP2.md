@@ -540,7 +540,7 @@ Pour débuter il nous faut créer un second fragment
 On modifie l'objet User et la classe du fragment.
 
 ```kotlin
-data class User(var lastname: String = "", var firstname: String = "", var birhdayDate: Date? = null, var gender: String = "")
+data class User(var lastname: String = "", var firstname: String = "", var birthdayDate: Long = 0, var gender: String = "")
 
 // ...
 
