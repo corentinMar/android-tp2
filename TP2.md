@@ -7,7 +7,8 @@ Dans le TP précédent, nous avons appris les bases de la programmation Android 
 Pour ce faire créons un nouveau projet. Pensez à définir les dépendances vers ConstraintLayout et MaterialDesign mais aussi Dagger qui va nous servir pour l'injection de dépendance.
 
 ```gradle
-apply plugin: 'android-kapt'
+apply plugin: 'kotlin-kapt'
+
 dependencies {
     ...
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
