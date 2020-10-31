@@ -53,7 +53,6 @@ Puis modifier notre vue principale ```activity_main.xml``` en ajoutant le bloc `
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto">
