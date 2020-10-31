@@ -1,4 +1,4 @@
-Version imagée : https://drive.google.com/file/d/1B7P8k0QYwg7PNrVIucEOHe5VYf65aruP/view?usp=sharing
+Version PDF : https://drive.google.com/file/d/1hHYwjyqlhF-ikJzPVNepIjD8KGR1ZT6m/view?usp=sharing
 
 # TP2 Communication et ergonomie
 
@@ -6,13 +6,18 @@ Dans le TP précédent, nous avons appris les bases de la programmation Android 
 
 Pour ce faire créons un nouveau projet. Pensez à définir les dépendances vers ConstraintLayout et MaterialDesign mais aussi Dagger qui va nous servir pour l'injection de dépendance.
 
-```gradle
-apply plugin: 'kotlin-kapt'
+L'injection de dépendances est une technique largement qui permet de poser les bases d'une bonne architecture d'application. **Avec cette approche, vous prenez les dépendances d'une classe et vous les fournissez plutôt que de laisser l'instance de classe les obtenir elle-même.**
 
+L'implémentation de l'injection de dépendances vous offre les avantages suivants:
+- Réutilisabilité des classes et découplage des dépendances : la réutilisation du code est améliorée en raison de l'inversion du contrôle, et les classes ne contrôlent plus la façon dont leurs dépendances sont créées, mais fonctionnent avec n'importe quelle configuration.
+- Facilité le refactoring
+- Facilité de test : une classe ne gère pas ses dépendances, donc lorsque vous la testez, vous pouvez passer différentes implémentations pour vérifier vos différents cas d'utilisation.
+
+```gradle
 dependencies {
     ...
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    implementation 'com.google.android.material:material:1.2.1'
     kapt "com.google.dagger:dagger-compiler:2.24"
 '
 }
@@ -173,7 +178,7 @@ package com.example.tp2.model
 data class User(var lastname: String = "", var firstname: String = "")
 ```
 
-Pour pouvoir lier cet objet avec notre formulaire directement dans le layout, il nous faut déclarer l'objet dans votre layout :
+Pour pouvoir lier cet objet avec notre formulaire directement dans le layout, il nous faut déclarer l'objet dans le fichier ;
 
 ```xml
 <data>
@@ -541,7 +546,7 @@ Pour débuter il nous faut créer un second fragment
 On modifie l'objet User et la classe du fragment.
 
 ```kotlin
-data class User(var lastname: String = "", var firstname: String = "", var birthdayDate: Long = 0, var gender: String = "")
+data class User(var lastname: String = "", var firstname: String = "", var birhdayDate: Date? = null, var gender: String = "")
 
 // ...
 
@@ -649,8 +654,8 @@ class PersonalDataFragment : Fragment(), PersonalDateEventListener {
 Désormais on peut attaquer la navigation en ajoutant un nouveau fichier au niveau du dossier des resources, clic droit  **Nouveau > Android Resource File** et appelez le navigation. Après validation, lorsqu'il vous demande d'ajouter les dépendances, acceptez. Sinon il vous faudra ajouter ceci dans le fichier gradle :
 
 ```gradle
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.0.0'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.0.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.1'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.1'
 ```
 
 ![Création du fichier de navigation](navigation1.png)
@@ -697,7 +702,7 @@ On ajoutera alors ceci dans gradle :
 
 ```gradle
 buildscript {
-    ext.navigationVersion = '2.1.0'
+    ext.navigationVersion = '2.3.1'
 
     //...
 
