@@ -187,7 +187,7 @@ package com.example.tp2.model
 data class User(var lastname: String = "", var firstname: String = "")
 ```
 
-Pour pouvoir lier cet objet avec notre formulaire directement dans le layout, il nous faut déclarer l'objet dans le fichier ;
+Pour pouvoir lier cet objet avec notre formulaire directement dans le layout, il nous faut déclarer l'objet dans le fichier ```activity_main.xml```
 
 ```xml
 <data>
