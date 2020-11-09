@@ -1,4 +1,13 @@
 Version PDF : https://drive.google.com/file/d/1hHYwjyqlhF-ikJzPVNepIjD8KGR1ZT6m/view?usp=sharing
+** ATTENTION **
+Si vous ne l'avez pas vu, les dépenances ROOM ont changé (si vous avez débuté le TP2 le 02/11) :
+```gradle
+dependencies {
+    ...
+    implementation 'com.google.dagger:dagger:2.25.3'
+    kapt 'com.google.dagger:dagger-compiler:2.25.3'
+}
+```
 
 # TP2 Communication et ergonomie
 
@@ -14,22 +23,12 @@ L'implémentation de l'injection de dépendances vous offre les avantages suivan
 - Facilité de test : une classe ne gère pas ses dépendances, donc lorsque vous la testez, vous pouvez passer différentes implémentations pour vérifier vos différents cas d'utilisation.
 
 ```gradle
-apply plugin: 'kotlin-android'
-
-apply plugin: 'kotlin-android-extensions'
-
-apply plugin: 'kotlin-kapt'
-
-apply plugin: "androidx.navigation.safeargs.kotlin"
-
-//...
-
 dependencies {
     ...
     implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
     implementation 'com.google.android.material:material:1.2.1'
-    kapt "com.google.dagger:dagger-compiler:2.24"
-'
+    implementation 'com.google.dagger:dagger:2.25.3'
+    kapt 'com.google.dagger:dagger-compiler:2.25.3'
 }
 ```
 
@@ -62,6 +61,7 @@ dataBinding {
 Puis modifier notre vue principale ```activity_main.xml``` en ajoutant le bloc ```<layout>```
 
 ```xml
+<?xml version="1.0" encoding="utf-8"?>
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -187,7 +187,7 @@ package com.example.tp2.model
 data class User(var lastname: String = "", var firstname: String = "")
 ```
 
-Pour pouvoir lier cet objet avec notre formulaire directement dans le layout, il nous faut déclarer l'objet dans le fichier ```activity_main.xml```
+Pour pouvoir lier cet objet avec notre formulaire directement dans le layout, il nous faut déclarer l'objet dans le fichier ;
 
 ```xml
 <data>
