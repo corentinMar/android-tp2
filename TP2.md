@@ -686,11 +686,11 @@ En ajoutant la propriété ```app:defaultNavHost``` à ```true```, on peut déso
         app:defaultNavHost="true"/>
 ```
 
-### 3.2 Suivre notre propre chemin
+### 3.3 Suivre notre propre chemin
 
 Retournous maintenant dans la resource de navigation. En cliquant sur ![Bouton ajout élément navigation](navigation2.png), nous allons ajouter une nouvelle destination et on choisit notre premier fragment Identity.
 
-Si le preview ne fonctionne pas (Preview Unavailable), ajoutez la propriété ```tools:layout="@layout/fragment_identity"``` au niveau de votre vue fragment. Et si cela ne marche toujours pas, il se peut que vous deviez vérifier vos versions de kotlin et gradle :)
+Si le preview ne fonctionne pas (Preview Unavailable), ajoutez la propriété ```tools:layout="@layout/fragment_identity"``` au niveau de votre vue fragment (c'est à dire dans le bloc fragment du activity_main.xml). Et si cela ne marche toujours pas, il se peut que vous deviez vérifier vos versions de kotlin et gradle :)
 
 On va ajouter ensuite notre deuxième fragment et les relier entre eux.
 ![Navigation entre fragment](navigation3.png)
