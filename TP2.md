@@ -15,6 +15,8 @@ L'implémentation de l'injection de dépendances vous offre les avantages suivan
 - Facilité de test : une classe ne gère pas ses dépendances, donc lorsque vous la testez, vous pouvez passer différentes implémentations pour vérifier vos différents cas d'utilisation.
 
 ```gradle
+apply plugin: 'kotlin-kapt'
+
 dependencies {
     ...
     implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
