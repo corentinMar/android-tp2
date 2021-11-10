@@ -774,6 +774,36 @@ Enfin, il faut penser à récupérer l'objet du côté du second fragment.
 
 Et le tour est joué, en toute sécurité !
 
+```kotlin
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/navigation"
+        app:startDestination="@id/identityFragment">
+
+    <fragment
+            android:id="@+id/identityFragment"
+            android:name="com.example.tp2.IdentityFragment"
+            android:label="IdentityFragment"
+            tools:layout="@layout/fragment_identity">
+        <action
+                android:id="@+id/action_identityFragment_to_personalDataFragment"
+                app:destination="@id/personalDataFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/personalDataFragment"
+            android:name="com.example.tp2.PersonalDataFragment"
+            android:label="PersonalDataFragment"
+            tools:layout="@layout/fragment_personal_data" >
+        <argument
+                android:name="user"
+                app:argType="com.example.tp2.model.User" />
+    </fragment>
+
+</navigation>
+```
+
 ![Résultat du deuxième fragment](navigation4.png)
 
 ![Meme](meme0.gif)
